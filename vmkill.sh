@@ -7,19 +7,6 @@
 #              It then shuts down or reboots the host, depending on chosen parameters.
 # Example: ./vmkill -s
 # Optional Parameters: -s shutdown host, -r reboot host, -h list optional parameters 
-# Last modified: June 9, 2017
-
-# Changelog #
-# v1.6: Modified script into seperate functions.
-#       Added getopts.
-# v1.5: Added check for active VMs before sending virsh shutdown.
-#       Added script comments for readability.
-#       Added contact information.
-# v1.4: Added check for root.
-# v1.3: Replaced echo with printf.
-# v1.2: Renamed script to 'vmkill'.
-# v1.1: Added host parameters.
-# v1.0: First version.
 
 # Script header
 script_header () {
