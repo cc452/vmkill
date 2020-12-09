@@ -17,7 +17,7 @@ script_header () {
 check_root () {
 	if [ "$UID" != "0" ]; then
 		printf "Must be root to run.\n\n"
-		exit
+		exit 3
 	fi
 }
 
@@ -40,10 +40,11 @@ map_vmArray () {
 	mapfile -t vmshutdown < <(virsh list --name)
 }
 
+# Checks for active VMs. If there are none, exits.
 check_active () {
 	if [ "${vmshutdown[0]}" == '' ]; then
 		printf "There are no active VMs.\n\n"
-		exit
+		exit 2
 	fi
 }
 
